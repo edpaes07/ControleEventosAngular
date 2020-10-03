@@ -1,0 +1,62 @@
+<h1>Cadastro de evento</h1>
+
+<div [formGroup]="eventoForm"  class="example-container">
+  <div id="row1">
+    <mat-form-field class="example-full-width">
+      <mat-label>Nome do evento</mat-label>
+      <input [required]="eventoForm.get('nome')" matInput placeholder="Ex. Palestra">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Local</mat-label>
+      <input [required]="eventoForm.get('local')" matInput placeholder="Ex. teams">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Descrição</mat-label>
+      <textarea [required]="eventoForm.get('descricao')" matInput placeholder="Ex. Atualização de plataforma..."></textarea>
+    </mat-form-field>
+  </div>
+
+  <div id=row2>
+    <mat-form-field appearance="fill">
+      <mat-label>Selecione a Categoria</mat-label>
+      <mat-select [required]="eventoForm.get('idCategoriaEvento')">
+        <mat-option value="1">Backend</mat-option>
+        <mat-option value="2">Frontend</mat-option>
+        <mat-option value="3">Mobile</mat-option>
+        <mat-option value="4">Cloud & DevOps</mat-option>
+        <mat-option value="5">Modern Workplaces</mat-option>
+        <mat-option value="6">UI/UX</mat-option>
+        <mat-option value="7">Data & Analytics</mat-option>
+        <mat-option value="8">Agilidade & Qualidade</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div id="row3">
+    <mat-form-field >
+      <mat-label>Selecione a data</mat-label>
+      <input id="data" [required]="eventoForm.get('dataHoraInicio')" matInput [matDatepicker]="picker1">
+      <mat-datepicker-toggle matSuffix [for]="picker1" ></mat-datepicker-toggle>
+      <mat-datepicker touchUi #picker1 disabled="false"></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input id="hora"  [ngxTimepicker]="picker" matInput placeholder="Hora do evento">
+      <ngx-material-timepicker #picker></ngx-material-timepicker>
+    </mat-form-field>
+  </div>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+

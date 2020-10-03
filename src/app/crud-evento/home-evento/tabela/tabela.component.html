@@ -1,0 +1,72 @@
+<div class="mat-elevation-z8">
+  <table mat-table class="full-width-table" matSort aria-label="Elements">
+
+    <ng-container matColumnDef="id">
+      <th id="evento"mat-header-cell *matHeaderCellDef mat-sort-header>Evento</th>
+      <td id="card" mat-cell *matCellDef="let row">
+
+        <div id="line">
+
+          <div id="status"
+            [class.aberto]="row.idEventoStatus == 1"
+            [class.andamento]="row.idEventoStatus == 2"
+            [class.concluido]="row.idEventoStatus == 3"
+            [class.cancelado]="row.idEventoStatus == 4">
+
+            <div id="statusInfo">
+              <p>{{getStatus(row.idEventoStatus)}}</p>
+              <h1>{{row.dataHoraInicio |  date:"dd/MMM":"pt" }}</h1>
+              <p>{{row.dataHoraInicio | date:'h:mm a'}} <br>
+            </div>
+
+            <div id="categoria">
+              <p
+              [class.cat1]="row.idCategoriaEvento == 1"
+              [class.cat2]="row.idCategoriaEvento == 2"
+              [class.cat3]="row.idCategoriaEvento == 3"
+              [class.cat4]="row.idCategoriaEvento == 4"
+              [class.cat5]="row.idCategoriaEvento == 5"
+              [class.cat6]="row.idCategoriaEvento == 6"
+              [class.cat7]="row.idCategoriaEvento == 7"
+              [class.cat8]="row.idCategoriaEvento == 8"
+              >{{getCategoria(row.idCategoriaEvento)}}</p>
+            </div>
+          </div>
+
+
+          <div id="infos">
+            <h2>{{row.nome}}</h2>
+
+            <div id="descricao">
+              <p class="negrito noMargin">Descrição:</p>
+              <p>{{row.descricao}}</p>
+              <p><span class="negrito noMargin">Local:</span> {{row.local}} </p>
+              <a [routerLink]="['/evento/details-evento/', row.idEvento]">Ver participantes do evento</a>
+            </div>
+          </div>
+
+          <div id="acoes">
+            <!-- <button [class.btdisabled]="row.idEventoStatus == 1" type="button" (click)="acaoIniciar(row.idEvento)">Iniciar</button> -->
+            <button mat-raised-button *ngIf="(row.dataHoraInicio >= currentDate.getTime())" type="button" (click)="acaoIniciar(row.idEvento)">
+              Iniciar
+            </button>
+            <button mat-raised-button *ngIf="row.idEventoStatus == 1" type="button" (click)="acaoCancelar(row.idEvento)">Cancelar</button>
+            <button mat-raised-button *ngIf="(row.idEventoStatus == 2)" type="button" (click)="acaoConcluir(row.idEvento)">Concluir</button>
+          </div>
+
+        </div>
+
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator #paginator
+      [length]="dataSource?.data.length"
+      [pageIndex]="0"
+      [pageSize]="5"
+      [pageSizeOptions]="[5, 10, 15, 25]">
+  </mat-paginator>
+</div>

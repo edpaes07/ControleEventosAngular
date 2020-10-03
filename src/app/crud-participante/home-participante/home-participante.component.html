@@ -1,0 +1,26 @@
+<main>
+  <div class="container-fluid">
+    <div class="container">
+      <div>
+        <h1>Participantes</h1>
+          <div class="row">
+            <div class="col-12 col-md-6 participante" *ngFor="let participante of participantes">
+              <mat-card>
+                <div class="row">
+                  <div class="col-2">
+                    <img src="../../../assets/profile-user.svg" />
+                  </div>
+                  <div class="col-10">
+                    <p>{{participante.nome}}</p>
+                  </div>
+                </div>
+              </mat-card>
+
+            </div>
+          </div>
+
+      </div>
+    </div>
+  </div>
+</main>
+

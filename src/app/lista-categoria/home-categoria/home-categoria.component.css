@@ -1,0 +1,11 @@
+.card-categoria{
+  text-align: center;
+  margin: 15px 0;
+  background-color: #129E76;
+  transition: 0.3s;
+  color: #fff;
+}
+
+.card-categoria:hover{
+  background-color: #3f51b5;
+}

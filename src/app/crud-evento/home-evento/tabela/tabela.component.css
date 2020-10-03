@@ -1,0 +1,156 @@
+.full-width-table {
+  width: 100%;
+}
+
+#line{
+  display: flex;
+  width: 100%;
+  height: auto;
+}
+
+#data{
+  width: 10%;
+  padding: 5px;
+}
+
+#card{
+  width: 90%;
+  padding: 20px;
+}
+
+#status{
+  height: 100%;
+  width: 20%;
+  padding-top: 10px;
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#statusInfo > h1{
+  font-size: 25pt;
+  color: #666;
+  font-family: sans-serif;
+  margin: 0;
+}
+#infos{
+  height: 100%;
+  width: 80%;
+  padding: 0 20px;
+}
+
+#descricao{
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #ededed;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.negrito{
+  font-weight: bolder
+}
+
+.noMargin{
+  margin: 0;
+}
+
+.concluido{
+  background-color: #CCE5FF ;
+  font-size: 12pt;
+}
+
+.aberto{
+  background-color: #D4EDDA;
+  font-size: 12pt;
+}
+
+.cancelado{
+  background-color: #F8D7DA ;
+  font-size: 12pt;
+}
+
+.andamento{
+  background-color: #FFF3CD;
+  font-size: 12pt;
+}
+
+#categoria{
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+#categoria > p{
+  width: 80%;
+  text-align: center;
+  margin: 0;
+  color: white;
+  text-transform: uppercase;
+  font-size: 9pt;
+  border-radius: 5px;
+}
+
+#statusInfo{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.cat1{
+  background-color:#00C86F;
+}
+
+.cat2{
+  background-color:#1881F6;
+}
+
+.cat3{
+  background-color:#FFBA05;
+}
+
+.cat4{
+  background-color:#F16165;
+}
+
+.cat5{
+  background-color:#FF8C2A;
+}
+
+.cat6{
+  background-color:#DC6EBE;
+}
+
+.cat7{
+  background-color:#00C86F;
+}
+
+.cat8{
+  background-color:#6B5BE2;
+}
+
+:host ::ng-deep .btdisable{
+  cursor: not-allowed;
+  pointer-events: none;
+  /*Button disabled - CSS color class*/
+  color: #ff0000;
+  background-color: #444;
+}
+
+#acoes{
+  display: flex;
+  align-items: center;
+}
+
+
+/*
+  background-color: ; verde
+  background-color: ; vermelho
+  background-color: #CCE5FF; azul
+  background-color:  laranja;
+*/

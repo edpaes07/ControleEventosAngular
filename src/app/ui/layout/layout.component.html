@@ -1,0 +1,19 @@
+<div *ngIf="router.url != '/'">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span class="menu-spacer"></span>
+      <div id="menu">
+        <div id="home">
+          <a mat-button [routerLink]="'/evento'"><mat-icon>home</mat-icon></a>
+        </div>
+
+        <div id="links">
+          <a mat-button [routerLink]="'/evento'"> Eventos</a>
+          <a mat-button [routerLink]="'/participante'"> Participantes </a>
+          <a mat-button [routerLink]="'/categorias'"> Categorias </a>
+          <a mat-button [routerLink]="'/'"> Sair </a>
+        </div>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>

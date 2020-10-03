@@ -1,0 +1,12 @@
+#tabela{
+  width: 65vw;
+  margin: 50px auto;
+
+}
+
+#form{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
